@@ -1,0 +1,14 @@
+COMO OBTENER EL VST3 SIN INSTALAR NADA (GitHub compila por vos)
+
+1. Crea una cuenta gratis en https://github.com
+2. Boton "New repository" -> nombre: NKLTune -> Private -> Create.
+3. En el repositorio nuevo: "uploading an existing file" y arrastra TODO el
+   contenido de esta carpeta (incluida la carpeta oculta .github).
+   Tip: si no te deja subir carpetas ocultas, usa GitHub Desktop.
+4. Entra a la pestana "Actions". Veras "Build NKL TUNE" corriendo (tarda ~10-15 min).
+5. Cuando termine (tilde verde), entra a esa ejecucion y abajo, en "Artifacts",
+   descarga NKL-TUNE-windows-latest (o macos-latest si usas Mac).
+6. Descomprime y copia la carpeta "NKL TUNE.vst3" a:
+   - Windows: C:\Program Files\Common Files\VST3
+   - Mac:     /Library/Audio/Plug-Ins/VST3
+7. Abre tu DAW y re-escanea plugins.
