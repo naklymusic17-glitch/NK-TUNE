@@ -1,0 +1,27 @@
+name: Build NKL TUNE
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Compilar
+        run: cmake --build build --config Release --parallel
+
+      - name: Subir el VST3
+        uses: actions/upload-artifact@v4
+        with:
+          name: NKL-TUNE-${{ matrix.os }}
+          path: build/NKLTune_artefacts/Release/VST3/
